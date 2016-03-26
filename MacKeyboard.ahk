@@ -93,11 +93,6 @@ Lwin & Tab::AltTab
 ; minimize windows
 #m::WinMinimize,a
 
-;Swap the Ctrl and Alt keys so that Alt+Arrow moves a word at a time
-; and Ctrl gives access to the menus etc.
-Alt::Ctrl
-Ctrl::Alt
-
 ; --------------------------------------------------------------
 ; Application specific
 ; --------------------------------------------------------------
@@ -113,18 +108,17 @@ Ctrl::Alt
 
 #IfWinActive
 
-; Visual Studio - From http://hiltmon.com/blog/2013/10/10/using-mac-navigation-keys-in-visual-studio/
-#IfWinActive, Microsoft Visual Studio
-
+; Map ctrl and command navigation - From http://hiltmon.com/blog/2013/10/10/using-mac-navigation-keys-in-visual-studio/
 
 #Right::End
 #Left::^+!Left
 #Up::^Home
 #Down::^End
-; !Right::^Right
-; !Left::^Left
+; Modified Alt keys to use https://autohotkey.com/board/topic/60675-osx-style-command-keys-in-windows/
+!Right::Send {ctrl down}{Right}{ctrl up}
+!Left::Send {ctrl down}{Left}{ctrl up}
+!+Left::Send {ctrl down}{shift down}{Left}{shift up}{ctrl up}
+!+Right::Send {ctrl down}{shift down}{Right}{shift up}{ctrl up}
 #b::^B
 #K::^M
 #/::!/
-
-#IfWinActive
