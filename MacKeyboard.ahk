@@ -113,7 +113,7 @@ Lwin & Tab::AltTab
 #IfWinActive, Microsoft Visual Studio
 
 #Right::End
-#Left::Home
+#Left::^+!Left
 #Up::^Home
 #Down::^End
 !Right::^Right
@@ -123,4 +123,3 @@ Lwin & Tab::AltTab
 #/::!/
 
 #IfWinActive
-
